@@ -1079,3 +1079,203 @@ footer {
         text-align: center;
     }
 }
+/* =========================================
+   PROJECT PAGINATION
+========================================= */
+
+.project-card[hidden] {
+    display: none !important;
+}
+
+.projects-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 45px;
+}
+
+.pagination-btn {
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.pagination-btn:hover:not(:disabled),
+.pagination-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Equal project card heights */
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-tools {
+    margin-top: auto;
+}
+
+.project-link {
+    align-self: flex-start;
+    margin-top: 15px;
+}
+
+/* Consistent description lengths */
+
+.project-card p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    overflow: hidden;
+}
+
+/* Mobile pagination */
+
+@media (max-width: 600px) {
+    .projects-pagination {
+        gap: 6px;
+    }
+
+    .pagination-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+
+/* =========================================
+   INDIVIDUAL PROJECT DETAILS PAGE
+========================================= */
+
+.project-page {
+    padding: 150px 0 100px;
+    min-height: 100vh;
+    background: #f8fafc;
+}
+
+.project-page-header {
+    max-width: 850px;
+    margin-bottom: 45px;
+}
+
+.project-page-header h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: var(--dark);
+}
+
+.project-page-description {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    line-height: 1.9;
+}
+
+.project-page-image {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 60px;
+    box-shadow: 0 15px 45px rgba(15, 23, 42, 0.05);
+}
+
+.project-page-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.project-page-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.project-page-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    margin-top: 35px;
+}
+
+.project-page-content h2:first-child {
+    margin-top: 0;
+}
+
+.project-page-content p,
+.project-page-content li {
+    color: var(--text-light);
+    line-height: 1.9;
+}
+
+.project-page-content ul {
+    padding-left: 22px;
+}
+
+.project-page-content li {
+    margin-bottom: 10px;
+}
+
+.project-page-sidebar {
+    padding: 30px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.project-page-sidebar h3 {
+    margin-bottom: 20px;
+}
+
+.project-back-button {
+    margin-top: 30px;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .project-page-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
+@media (max-width: 600px) {
+    .project-page {
+        padding: 120px 0 70px;
+    }
+
+    .project-page-image {
+        padding: 10px;
+    }
+
+    .project-page-header h1 {
+        font-size: 2rem;
+    }
+}
